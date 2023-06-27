@@ -1,43 +1,45 @@
 #include "sort.h"
 
 /**
- * insertion_sort_list - sorts a doubly linked list of integers
- * in ascending order
- * @list: the given doubly linked list
+ * insertion_sort_list - sorts a DLL of integers in
+ * ascending order using the insertion sort
+ * algorithm
  *
- * Return: void
+ * @list: doubly linked list
+ * Return: no return
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *current, *back, *tmp;
+	listint_t *current, *tmp;
 
-	if (!list || !*list || !(*list)->next)
-	{
+	if (!list)
 		return;
-	}
-	current = (*list)->next;
+
+	current = *list;
+
 	while (current)
 	{
-		back = current;
-		while (back->prev)
+		while (current->next && (current->n > current->next->n))
 		{
-			tmp = back->prev;
-			if (back->n < tmp->n)
-			{
-				tmp->next = back->next;
-				back->prev = tmp->prev;
-				if (back->next)
-					back->next->prev = tmp;
-				if (tmp->prev)
-					tmp->prev->next = back;
-				else
-					*list = back;
-				back->next = tmp;
-				tmp->prev = back;
-				print_list(*list);
-				continue;
-			}
-			back = back->prev;
+			tmp = current->next;
+			current->next = tmp->next;
+			tmp->prev = current->prev;
+
+			if (current->prev)
+				current->prev->next = tmp;
+
+			if (tmp->next)
+				tmp->next->prev = current;
+
+			current->prev = tmp;
+			tmp->next = current;
+
+			if (tmp->prev)
+				current = tmp->prev;
+			else
+				*list = tmp;
+
+			print_list(*list);
 		}
 		current = current->next;
 	}
