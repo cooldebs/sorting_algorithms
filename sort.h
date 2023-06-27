@@ -1,8 +1,6 @@
 #ifndef _SORT_H
 #define _SORT_H
 
-
-/* Libraries */
 #include <stdio.h>
 #include <stdlib.h>
 #include <stddef.h>
