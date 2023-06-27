@@ -2,9 +2,8 @@
 #include <stdio.h>
 
 /**
- * insertion_sort_list - sorts a DLL of integers in
- * ascending order using the insertion sort
- * algorithm
+ * insertion_sort_list - sorts a doubly linked list
+ * of integers in ascending order
  *
  * @list: doubly linked list
  *
