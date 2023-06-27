@@ -1,4 +1,5 @@
 #include "sort.h"
+#include <stdio.h>
 
 /**
  * insertion_sort_list - sorts a DLL of integers in
@@ -6,7 +7,8 @@
  * algorithm
  *
  * @list: doubly linked list
- * Return: no return
+ *
+ * Return: void
  */
 void insertion_sort_list(listint_t **list)
 {
