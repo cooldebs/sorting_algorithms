@@ -3,8 +3,7 @@
 #include "sort.h"
 
 /**
- * create_listint - Creates a doubly linked list
- * from an array of integers
+ * create_listint - Creates a doubly linked list from an array of integers
  *
  * @array: Array to convert to a doubly linked list
  * @size: Size of the array
