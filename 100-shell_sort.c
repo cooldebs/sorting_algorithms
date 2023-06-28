@@ -5,6 +5,8 @@
  * @array: the given array
  * @size: size of the array
  *
+ * Description: Uses the Knuth interval sequence.
+ *
  * Return: void
  */
 void shell_sort(int *array, size_t size)
